@@ -9,7 +9,7 @@ public class MaxSubArray {
       maxSum = Math.max(maxSum, currSum);
     }
 
-    System.out.println("Max subarray sum is: " + maxSum);
+    System.out.println("Max subarray sum is : " + maxSum);
   }
 
   public static void main(String[] args) {

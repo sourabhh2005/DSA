@@ -13,7 +13,7 @@ public class SubArr {
     for (int i = 0; i < arr.length; i++) {
       int sum = 0;
       for (int j = i; j < arr.length; j++) {
-        sum += arr[j];
+        sum += arr[j]; 
 
         sum = i == 0 ? prefixSum[j] : prefixSum[j] - prefixSum[i - 1];
 

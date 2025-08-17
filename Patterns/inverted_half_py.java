@@ -9,7 +9,7 @@ public class inverted_half_py {
 
     for (int i = n; i >= 1; i--) { // loop starts from n down to 1
       for (int j = 1; j <= i; j++) {
-        System.out.print("*");
+        System.out.print("* ");
       }
       System.out.println();
     }

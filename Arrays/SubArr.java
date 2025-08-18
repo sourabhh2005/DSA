@@ -1,32 +1,15 @@
 public class SubArr {
 
-  public static void subArrays(int[] arr) {
-    int maxSum = Integer.MIN_VALUE;
-    int minSum = Integer.MAX_VALUE;
-    int prefixSum[] = new int[arr.length];
-    prefixSum[0] = arr[0];
-    //CAL prefix sum
-    for (int i = 1; i < prefixSum.length; i++) {
-      prefixSum[i] = prefixSum[i - 1] + arr[i];
-    }
+  public static void subArrays(int arr[]) {
+    int curr_max = arr[0], maxSum = arr[0];
+    int curr_min = arr[0], minSum = arr[0];
 
-    for (int i = 0; i < arr.length; i++) {
-      int sum = 0;
-      for (int j = i; j < arr.length; j++) {
-        sum += arr[j]; 
+    for (int i = 1; i < arr.length; i++) {
+      curr_max = Math.max(arr[i], curr_max + arr[i]);
+      maxSum = Math.max(maxSum, curr_max);
 
-        sum = i == 0 ? prefixSum[j] : prefixSum[j] - prefixSum[i - 1];
-
-        // Print current subarray
-        // for (int k = i; k <= j; k++) {
-        //   System.out.print(arr[k] + " ");
-        // }
-        // System.out.println();
-
-        // Update max and min
-        maxSum = Math.max(maxSum, sum);
-        minSum = Math.min(minSum, sum);
-      }
+      curr_min = Math.min(arr[i], curr_min + arr[i]);
+      minSum = Math.min(minSum, curr_min);
     }
 
     System.out.println("\nMaximum Subarray Sum: " + maxSum);

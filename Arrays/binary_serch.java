@@ -19,7 +19,7 @@ public class binary_serch {
   }
 
   public static void main(String[] args) {
-    int num[] = { 1, 2, 3, 10, 34, 12 };
+    int num[] = { 1, 22, 3, 30, 34, 10 };
     int key = 10;
     System.out.println(bin_ser(num, key));
   }
